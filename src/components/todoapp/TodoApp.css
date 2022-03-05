@@ -1,0 +1,10 @@
+.login-container{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+.creds-error{
+    color:red;
+}
+.creds-correct{
+    color:green;
+}
