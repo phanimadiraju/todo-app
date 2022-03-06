@@ -8,3 +8,18 @@
 .creds-correct{
     color:green;
 }
+.footer{
+    background-color: #222222;
+    color:whitesmoke;
+    position: absolute;
+    width:100%;
+    height:40px;
+    text-align: center;
+    bottom:0
+}
+.h1-msg{
+    margin-left: 33.33%;
+}
+.container{
+    text-align: center;
+}
