@@ -1,25 +1,19 @@
 
 import React,{Component} from 'react'
+import ToDoDataService from './ToDoDataService';
 class ToDosComponent extends Component {
     constructor() {
         super();
         this.state = {
-            todos: [
-                {
-                    id: 1,
-                    description: 'Learn React',
-                    done:false,
-                    completionDate:new Date() 
-                },
-                {
-                    id: 2,
-                    description: 'Learn Spring boot',done:false,completionDate:new Date() 
-                }, {
-                    id: 3,
-                    description: 'Become Full Stack',done:false,completionDate:new Date() 
-                }
-            ]
+            todos: []
         }
+    }
+
+    componentDidMount(){
+        ToDoDataService.retrieveAllTodos()
+     .then(response => {
+         this.setState({ todos:response.data})
+     })
     }
     render() {
         return (
@@ -40,7 +34,7 @@ class ToDosComponent extends Component {
                             {/* <td>{todo.id}</td> */}
                             <td>{todo.description}</td>
                             <td>{todo.done.toString()}</td>
-                            <td>{todo.completionDate.toString()}</td>
+                            <td>{todo.targetDate.toString()}</td>
                         </tr>
                         )
                         }

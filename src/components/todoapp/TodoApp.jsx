@@ -11,14 +11,10 @@ import LogoutComponent from './LogoutComponent'
 
 import WithNavigation from './WithNavigation.jsx'
 
-//import WithParams from './WithParams.jsx'
-
-
 class TodoApp extends Component {
     render() {
         const LoginComponentWithNavigation = WithNavigation(LoginComponent);
-        //const WelcomeComponentWithParams = WithParams(WelcomeComponent);
-        //const HeaderComponentWithNavigation = WithNavigation(HeaderComponent);
+        
         return (
             <BrowserRouter>
             <HeaderComponent/>
@@ -26,7 +22,6 @@ class TodoApp extends Component {
                     <Route path="/" element={<LoginComponentWithNavigation />} />
                     <Route path="/login" element={<LoginComponentWithNavigation />} />
                     <Route path="/welcome" element={<WelcomeComponent />} />
-                    {/* <Route path="/welcome/:name" element={<WelcomeComponentWithParams />} /> */}
                     <Route path="*" element={<ErrorComponent />} />
                     <Route path="/todos" element={<ToDosComponent />} />
                     <Route path="/logout" element={<LogoutComponent />} />
